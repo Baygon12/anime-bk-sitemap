@@ -34,16 +34,17 @@
     }
     nav a {
       padding: 6px 12px;
-      background-color: #fff;
-      color: #ff3d00;
-      border-radius: 20px;
+      background-color: transparent;
+      color: white;
+      border-radius: 0;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.9rem;
-      transition: background 0.3s;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background-color: #ffe0d9;
+      color: #ffccbc;
     }
     .menu-toggle {
       display: none;
@@ -202,7 +203,7 @@
   </div>
 </main>
 
-<!-- โหลดข้อมูลรายการจากไฟล์ภายนอก -->
+<!-- โหลดข้อมูลจาก anime-data.js -->
 <script src="anime-data.js"></script>
 
 <script>
@@ -224,7 +225,7 @@
 
   const itemsPerPage = 20;
   let currentPage = 1;
-  let filteredList = animeList; // มาจาก anime-data.js
+  let filteredList = animeList;
 
   function renderPage(page) {
     animeGrid.innerHTML = '';
@@ -238,7 +239,6 @@
       noResults.style.display = 'none';
     }
 
-    let episodeNumber = start + 1;
     pageItems.forEach(anime => {
       const card = document.createElement('div');
       card.className = 'anime-card';
@@ -247,12 +247,11 @@
           <img src="${anime.img}" alt="${anime.title}" />
           <div class="anime-info">
             <div class="anime-title">${anime.title}</div>
-            <div class="anime-ep">ตอนที่ ${episodeNumber}</div>
+            <div class="anime-ep">${anime.type}</div>
           </div>
         </a>
       `;
       animeGrid.appendChild(card);
-      episodeNumber++;
     });
 
     prevBtn.disabled = (page === 1);
