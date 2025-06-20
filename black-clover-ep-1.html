@@ -35,13 +35,10 @@
     }
     nav a {
       padding: 6px 12px;
-      background-color: transparent;
       color: white;
-      border-radius: 0;
-      text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
-      cursor: pointer;
+      text-decoration: none;
       transition: color 0.3s;
     }
     nav a:hover {
@@ -92,13 +89,7 @@
       text-align: center;
       font-size: 1.5rem;
       color: #ffa07a;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      text-align: center;
-      font-size: 1rem;
-      color: #ccc;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .nav-buttons {
       text-align: center;
@@ -106,7 +97,7 @@
     }
     .nav-buttons a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 8px;
       background-color: #ff3d00;
       color: white;
       padding: 10px 20px;
@@ -145,7 +136,7 @@
   <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
     <span></span><span></span><span></span>
   </div>
-  <nav id="navMenu" role="navigation">
+  <nav id="navMenu">
     <a href="#">พากย์ไทย</a>
     <a href="#">ซับไทย</a>
     <a href="#">The Movie</a>
@@ -155,16 +146,18 @@
 
 <main>
   <div class="video-title">ตอนที่ 1</div>
-  <div class="subtitle">พากย์ไทย / ซับไทย / 2025</div>
 
   <div class="nav-buttons">
     <a href="play0.html">ก่อนหน้า</a>
+    <a href="index.html">ทั้งหมด</a>
     <a href="play2.html">ถัดไป</a>
   </div>
 
   <div class="video-container">
-    <!-- ฝัง Google Drive หรือ MP4 -->
+    <!-- ฝัง Google Drive -->
     <iframe src="https://drive.google.com/file/d/XXXX/preview" allowfullscreen></iframe>
+
+    <!-- ถ้าคุณใช้ MP4 ให้แทนที่ iframe ด้านบนด้วยด้านล่างนี้ -->
     <!--
     <video controls autoplay>
       <source src="video1.mp4" type="video/mp4">
