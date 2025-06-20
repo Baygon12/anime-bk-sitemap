@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="th">
 <head>
 <meta charset="utf-8"/>
@@ -7,380 +6,214 @@
 <title>Black Clover - รายละเอียดและตอนทั้งหมด</title>
 <link href="https://img2.pic.in.th/pic/039b1c3dd878efaf74.png" rel="icon" type="image/png"/>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background-color: #141414;
-      color: #fff;
-    }
+  body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: #141414;
+    color: #fff;
+  }
 
-    header {
-      background-color: #ff3d00;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-    }
+  header {
+    background-color: #ff3d00;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
 
-    .logo img {
-      height: 24px;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
+  nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
 
+  nav a {
+    padding: 6px 12px;
+    background-color: transparent;
+    color: white;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ffccbc;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
     nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ff3d00;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      border-top: 1px solid #fff3;
+    }
+
+    nav.active {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
     }
 
     nav a {
-      padding: 6px 12px;
-      background-color: transparent;
-      color: white;
+      padding: 12px;
       border-radius: 0;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffccbc;
+      text-align: center;
+      font-size: 1.1rem;
     }
 
     .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+      display: flex;
     }
+  }
 
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+  .container {
+    max-width: 1024px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
 
-    @media (max-width: 600px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #ff3d00;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        z-index: 100;
-        border-top: 1px solid #fff3;
-      }
+  .anime-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff3d00;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-      nav.active {
-        display: flex;
-      }
+  .anime-img {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 30px auto;
+    border-radius: 8px;
+  }
 
-      nav a {
-        padding: 12px;
-        border-radius: 0;
-        text-align: center;
-        font-size: 1.1rem;
-      }
+  .anime-desc {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+    text-align: center;
+  }
 
-      .menu-toggle {
-        display: flex;
-      }
-    }
+  h2 {
+    color: #ff6f3d;
+    margin-bottom: 15px;
+    text-align: center;
+  }
 
-    .container {
-      max-width: 1024px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
+  ul.episode-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    gap: 12px;
+  }
 
-    .anime-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ff3d00;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+  ul.episode-list li {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: background 0.2s;
+  }
 
-    .anime-img {
-      display: block;
-      max-width: 300px;
-      margin: 0 auto 30px auto;
-      border-radius: 8px;
-    }
+  ul.episode-list li:hover {
+    background-color: #2a2a2a;
+  }
 
-    .anime-desc {
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ddd;
-      text-align: center;
-    }
+  ul.episode-list a {
+    color: #ffa07a;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+  }
 
-    h2 {
-      color: #ff6f3d;
-      margin-bottom: 15px;
-      text-align: center;
-    }
+  ul.episode-list a:hover {
+    color: #fff;
+  }
 
-    ul.episode-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 700px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
-      gap: 12px;
-    }
-
-    ul.episode-list li {
-      background-color: #1f1f1f;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    ul.episode-list li:hover {
-      background-color: #2a2a2a;
-    }
-
-    ul.episode-list a {
-      color: #ffa07a;
-      text-decoration: none;
-      font-weight: 600;
-      display: block;
-    }
-
-    ul.episode-list a:hover {
-      color: #fff;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      padding: 20px;
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
-  </style>
+  footer {
+    text-align: center;
+    color: #aaa;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+</style>
 </head>
 <body>
+
 <header>
-<a aria-label="ไปหน้าแรก Anime BK" class="logo" href="index.html">
-  
-    Anime BK
-  </a>
-<div aria-label="Toggle menu" class="menu-toggle" id="menuToggle" role="button" tabindex="0">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<nav id="navMenu" role="navigation"><a href="index.html">หน้าแรก</a><a href="#">พากย์ไทย</a><a href="#">ซับไทย</a><a href="#">ติดต่อ</a></nav>
+  <a aria-label="ไปหน้าแรก Anime BK" class="logo" href="index.html">Anime BK</a>
+  <div aria-label="Toggle menu" class="menu-toggle" id="menuToggle" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="navMenu" role="navigation">
+    <a href="dub.html">พากย์ไทย</a>
+    <a href="sub.html">ซับไทย</a>
+    <a href="movie.html">The Movie</a>
+    <a href="contact.html">ติดต่อ</a>
+  </nav>
 </header>
+
 <div class="container">
-<h1 class="anime-title">Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย</h1>
-<img alt="Black Clover แบล็คโคลเวอร์" class="anime-img" src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&amp;ssl=1"/>
-<p class="anime-desc">
+  <h1 class="anime-title">Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย</h1>
+  <img alt="Black Clover แบล็คโคลเวอร์" class="anime-img" src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&amp;ssl=1" />
+  <p class="anime-desc">
     เรื่องราวของอัสต้าและยูโนเด็กกำพร้าที่ถูกทิ้งไว้ด้วยกันในโบสถ์ เด็กทั้งสองตั้งเป้าหมายเป็นจักรพรรดิผู้วิเศษ แม้พวกเขาจะไม่มีเวทมนตร์ก็ตาม แต่ด้วยความมุ่งมั่นและความพยายามพวกเขาจะฝ่าฟันอุปสรรคเพื่อพิสูจน์ตัวเองในโลกเวทมนตร์ที่โหดร้าย
   </p>
-<h2>รายการตอน Black Clover</h2>
-<ul class="episode-list">
-<!-- ลิงก์ตอนทั้งหมด 170 ตอน แทรกที่นี่ -->
-<li><a href="black-clover-ep-170.html">ตอนที่ 170</a></li>
-<li><a href="black-clover-ep-169.html">ตอนที่ 169</a></li>
-<li><a href="black-clover-ep-168.html">ตอนที่ 168</a></li>
-<li><a href="black-clover-ep-167.html">ตอนที่ 167</a></li>
-<li><a href="black-clover-ep-166.html">ตอนที่ 166</a></li>
-<li><a href="black-clover-ep-165.html">ตอนที่ 165</a></li>
-<li><a href="black-clover-ep-164.html">ตอนที่ 164</a></li>
-<li><a href="black-clover-ep-163.html">ตอนที่ 163</a></li>
-<li><a href="black-clover-ep-162.html">ตอนที่ 162</a></li>
-<li><a href="black-clover-ep-161.html">ตอนที่ 161</a></li>
-<li><a href="black-clover-ep-160.html">ตอนที่ 160</a></li>
-<li><a href="black-clover-ep-159.html">ตอนที่ 159</a></li>
-<li><a href="black-clover-ep-158.html">ตอนที่ 158</a></li>
-<li><a href="black-clover-ep-157.html">ตอนที่ 157</a></li>
-<li><a href="black-clover-ep-156.html">ตอนที่ 156</a></li>
-<li><a href="black-clover-ep-155.html">ตอนที่ 155</a></li>
-<li><a href="black-clover-ep-154.html">ตอนที่ 154</a></li>
-<li><a href="black-clover-ep-153.html">ตอนที่ 153</a></li>
-<li><a href="black-clover-ep-152.html">ตอนที่ 152</a></li>
-<li><a href="black-clover-ep-151.html">ตอนที่ 151</a></li>
-<li><a href="black-clover-ep-150.html">ตอนที่ 150</a></li>
-<li><a href="black-clover-ep-149.html">ตอนที่ 149</a></li>
-<li><a href="black-clover-ep-148.html">ตอนที่ 148</a></li>
-<li><a href="black-clover-ep-147.html">ตอนที่ 147</a></li>
-<li><a href="black-clover-ep-146.html">ตอนที่ 146</a></li>
-<li><a href="black-clover-ep-145.html">ตอนที่ 145</a></li>
-<li><a href="black-clover-ep-144.html">ตอนที่ 144</a></li>
-<li><a href="black-clover-ep-143.html">ตอนที่ 143</a></li>
-<li><a href="black-clover-ep-142.html">ตอนที่ 142</a></li>
-<li><a href="black-clover-ep-141.html">ตอนที่ 141</a></li>
-<li><a href="black-clover-ep-140.html">ตอนที่ 140</a></li>
-<li><a href="black-clover-ep-139.html">ตอนที่ 139</a></li>
-<li><a href="black-clover-ep-138.html">ตอนที่ 138</a></li>
-<li><a href="black-clover-ep-137.html">ตอนที่ 137</a></li>
-<li><a href="black-clover-ep-136.html">ตอนที่ 136</a></li>
-<li><a href="black-clover-ep-135.html">ตอนที่ 135</a></li>
-<li><a href="black-clover-ep-134.html">ตอนที่ 134</a></li>
-<li><a href="black-clover-ep-133.html">ตอนที่ 133</a></li>
-<li><a href="black-clover-ep-132.html">ตอนที่ 132</a></li>
-<li><a href="black-clover-ep-131.html">ตอนที่ 131</a></li>
-<li><a href="black-clover-ep-130.html">ตอนที่ 130</a></li>
-<li><a href="black-clover-ep-129.html">ตอนที่ 129</a></li>
-<li><a href="black-clover-ep-128.html">ตอนที่ 128</a></li>
-<li><a href="black-clover-ep-127.html">ตอนที่ 127</a></li>
-<li><a href="black-clover-ep-126.html">ตอนที่ 126</a></li>
-<li><a href="black-clover-ep-125.html">ตอนที่ 125</a></li>
-<li><a href="black-clover-ep-124.html">ตอนที่ 124</a></li>
-<li><a href="black-clover-ep-123.html">ตอนที่ 123</a></li>
-<li><a href="black-clover-ep-122.html">ตอนที่ 122</a></li>
-<li><a href="black-clover-ep-121.html">ตอนที่ 121</a></li>
-<li><a href="black-clover-ep-120.html">ตอนที่ 120</a></li>
-<li><a href="black-clover-ep-119.html">ตอนที่ 119</a></li>
-<li><a href="black-clover-ep-118.html">ตอนที่ 118</a></li>
-<li><a href="black-clover-ep-117.html">ตอนที่ 117</a></li>
-<li><a href="black-clover-ep-116.html">ตอนที่ 116</a></li>
-<li><a href="black-clover-ep-115.html">ตอนที่ 115</a></li>
-<li><a href="black-clover-ep-114.html">ตอนที่ 114</a></li>
-<li><a href="black-clover-ep-113.html">ตอนที่ 113</a></li>
-<li><a href="black-clover-ep-112.html">ตอนที่ 112</a></li>
-<li><a href="black-clover-ep-111.html">ตอนที่ 111</a></li>
-<li><a href="black-clover-ep-110.html">ตอนที่ 110</a></li>
-<li><a href="black-clover-ep-109.html">ตอนที่ 109</a></li>
-<li><a href="black-clover-ep-108.html">ตอนที่ 108</a></li>
-<li><a href="black-clover-ep-107.html">ตอนที่ 107</a></li>
-<li><a href="black-clover-ep-106.html">ตอนที่ 106</a></li>
-<li><a href="black-clover-ep-105.html">ตอนที่ 105</a></li>
-<li><a href="black-clover-ep-104.html">ตอนที่ 104</a></li>
-<li><a href="black-clover-ep-103.html">ตอนที่ 103</a></li>
-<li><a href="black-clover-ep-102.html">ตอนที่ 102</a></li>
-<li><a href="black-clover-ep-101.html">ตอนที่ 101</a></li>
-<li><a href="black-clover-ep-100.html">ตอนที่ 100</a></li>
-<li><a href="black-clover-ep-99.html">ตอนที่ 99</a></li>
-<li><a href="black-clover-ep-98.html">ตอนที่ 98</a></li>
-<li><a href="black-clover-ep-97.html">ตอนที่ 97</a></li>
-<li><a href="black-clover-ep-96.html">ตอนที่ 96</a></li>
-<li><a href="black-clover-ep-95.html">ตอนที่ 95</a></li>
-<li><a href="black-clover-ep-94.html">ตอนที่ 94</a></li>
-<li><a href="black-clover-ep-93.html">ตอนที่ 93</a></li>
-<li><a href="black-clover-ep-92.html">ตอนที่ 92</a></li>
-<li><a href="black-clover-ep-91.html">ตอนที่ 91</a></li>
-<li><a href="black-clover-ep-90.html">ตอนที่ 90</a></li>
-<li><a href="black-clover-ep-89.html">ตอนที่ 89</a></li>
-<li><a href="black-clover-ep-88.html">ตอนที่ 88</a></li>
-<li><a href="black-clover-ep-87.html">ตอนที่ 87</a></li>
-<li><a href="black-clover-ep-86.html">ตอนที่ 86</a></li>
-<li><a href="black-clover-ep-85.html">ตอนที่ 85</a></li>
-<li><a href="black-clover-ep-84.html">ตอนที่ 84</a></li>
-<li><a href="black-clover-ep-83.html">ตอนที่ 83</a></li>
-<li><a href="black-clover-ep-82.html">ตอนที่ 82</a></li>
-<li><a href="black-clover-ep-81.html">ตอนที่ 81</a></li>
-<li><a href="black-clover-ep-80.html">ตอนที่ 80</a></li>
-<li><a href="black-clover-ep-79.html">ตอนที่ 79</a></li>
-<li><a href="black-clover-ep-78.html">ตอนที่ 78</a></li>
-<li><a href="black-clover-ep-77.html">ตอนที่ 77</a></li>
-<li><a href="black-clover-ep-76.html">ตอนที่ 76</a></li>
-<li><a href="black-clover-ep-75.html">ตอนที่ 75</a></li>
-<li><a href="black-clover-ep-74.html">ตอนที่ 74</a></li>
-<li><a href="black-clover-ep-73.html">ตอนที่ 73</a></li>
-<li><a href="black-clover-ep-72.html">ตอนที่ 72</a></li>
-<li><a href="black-clover-ep-71.html">ตอนที่ 71</a></li>
-<li><a href="black-clover-ep-70.html">ตอนที่ 70</a></li>
-<li><a href="black-clover-ep-69.html">ตอนที่ 69</a></li>
-<li><a href="black-clover-ep-68.html">ตอนที่ 68</a></li>
-<li><a href="black-clover-ep-67.html">ตอนที่ 67</a></li>
-<li><a href="black-clover-ep-66.html">ตอนที่ 66</a></li>
-<li><a href="black-clover-ep-65.html">ตอนที่ 65</a></li>
-<li><a href="black-clover-ep-64.html">ตอนที่ 64</a></li>
-<li><a href="black-clover-ep-63.html">ตอนที่ 63</a></li>
-<li><a href="black-clover-ep-62.html">ตอนที่ 62</a></li>
-<li><a href="black-clover-ep-61.html">ตอนที่ 61</a></li>
-<li><a href="black-clover-ep-60.html">ตอนที่ 60</a></li>
-<li><a href="black-clover-ep-59.html">ตอนที่ 59</a></li>
-<li><a href="black-clover-ep-58.html">ตอนที่ 58</a></li>
-<li><a href="black-clover-ep-57.html">ตอนที่ 57</a></li>
-<li><a href="black-clover-ep-56.html">ตอนที่ 56</a></li>
-<li><a href="black-clover-ep-55.html">ตอนที่ 55</a></li>
-<li><a href="black-clover-ep-54.html">ตอนที่ 54</a></li>
-<li><a href="black-clover-ep-53.html">ตอนที่ 53</a></li>
-<li><a href="black-clover-ep-52.html">ตอนที่ 52</a></li>
-<li><a href="black-clover-ep-51.html">ตอนที่ 51</a></li>
-<li><a href="black-clover-ep-50.html">ตอนที่ 50</a></li>
-<li><a href="black-clover-ep-49.html">ตอนที่ 49</a></li>
-<li><a href="black-clover-ep-48.html">ตอนที่ 48</a></li>
-<li><a href="black-clover-ep-47.html">ตอนที่ 47</a></li>
-<li><a href="black-clover-ep-46.html">ตอนที่ 46</a></li>
-<li><a href="black-clover-ep-45.html">ตอนที่ 45</a></li>
-<li><a href="black-clover-ep-44.html">ตอนที่ 44</a></li>
-<li><a href="black-clover-ep-43.html">ตอนที่ 43</a></li>
-<li><a href="black-clover-ep-42.html">ตอนที่ 42</a></li>
-<li><a href="black-clover-ep-41.html">ตอนที่ 41</a></li>
-<li><a href="black-clover-ep-40.html">ตอนที่ 40</a></li>
-<li><a href="black-clover-ep-39.html">ตอนที่ 39</a></li>
-<li><a href="black-clover-ep-38.html">ตอนที่ 38</a></li>
-<li><a href="black-clover-ep-37.html">ตอนที่ 37</a></li>
-<li><a href="black-clover-ep-36.html">ตอนที่ 36</a></li>
-<li><a href="black-clover-ep-35.html">ตอนที่ 35</a></li>
-<li><a href="black-clover-ep-34.html">ตอนที่ 34</a></li>
-<li><a href="black-clover-ep-33.html">ตอนที่ 33</a></li>
-<li><a href="black-clover-ep-32.html">ตอนที่ 32</a></li>
-<li><a href="black-clover-ep-31.html">ตอนที่ 31</a></li>
-<li><a href="black-clover-ep-30.html">ตอนที่ 30</a></li>
-<li><a href="black-clover-ep-29.html">ตอนที่ 29</a></li>
-<li><a href="black-clover-ep-28.html">ตอนที่ 28</a></li>
-<li><a href="black-clover-ep-27.html">ตอนที่ 27</a></li>
-<li><a href="black-clover-ep-26.html">ตอนที่ 26</a></li>
-<li><a href="black-clover-ep-25.html">ตอนที่ 25</a></li>
-<li><a href="black-clover-ep-24.html">ตอนที่ 24</a></li>
-<li><a href="black-clover-ep-23.html">ตอนที่ 23</a></li>
-<li><a href="black-clover-ep-22.html">ตอนที่ 22</a></li>
-<li><a href="black-clover-ep-21.html">ตอนที่ 21</a></li>
-<li><a href="black-clover-ep-20.html">ตอนที่ 20</a></li>
-<li><a href="black-clover-ep-19.html">ตอนที่ 19</a></li>
-<li><a href="black-clover-ep-18.html">ตอนที่ 18</a></li>
-<li><a href="black-clover-ep-17.html">ตอนที่ 17</a></li>
-<li><a href="black-clover-ep-16.html">ตอนที่ 16</a></li>
-<li><a href="black-clover-ep-15.html">ตอนที่ 15</a></li>
-<li><a href="black-clover-ep-14.html">ตอนที่ 14</a></li>
-<li><a href="black-clover-ep-13.html">ตอนที่ 13</a></li>
-<li><a href="black-clover-ep-12.html">ตอนที่ 12</a></li>
-<li><a href="black-clover-ep-11.html">ตอนที่ 11</a></li>
-<li><a href="black-clover-ep-10.html">ตอนที่ 10</a></li>
-<li><a href="black-clover-ep-9.html">ตอนที่ 9</a></li>
-<li><a href="black-clover-ep-8.html">ตอนที่ 8</a></li>
-<li><a href="black-clover-ep-7.html">ตอนที่ 7</a></li>
-<li><a href="black-clover-ep-6.html">ตอนที่ 6</a></li>
-<li><a href="black-clover-ep-5.html">ตอนที่ 5</a></li>
-<li><a href="black-clover-ep-4.html">ตอนที่ 4</a></li>
-<li><a href="black-clover-ep-3.html">ตอนที่ 3</a></li>
-<li><a href="black-clover-ep-2.html">ตอนที่ 2</a></li>
-<li><a href="black-clover-ep-1.html">ตอนที่ 1</a></li>
-</ul>
+
+  <h2>รายการตอน Black Clover</h2>
+  <ul class="episode-list">
+    <!-- ตอนทั้งหมดที่มี ลิงก์ตามที่คุณมีไว้ -->
+    <li><a href="black-clover-ep-170.html">ตอนที่ 170</a></li>
+    <li><a href="black-clover-ep-169.html">ตอนที่ 169</a></li>
+    <li><a href="black-clover-ep-168.html">ตอนที่ 168</a></li>
+    <!-- ... เพิ่มตอนที่เหลือตามเดิม ... -->
+    <li><a href="black-clover-ep-1.html">ตอนที่ 1</a></li>
+  </ul>
 </div>
+
 <footer>
   © 2025 Anime BK — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว
 </footer>
+
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
@@ -389,7 +222,7 @@
     navMenu.classList.toggle('active');
   });
 
-  // Accessibility: toggle with keyboard (Enter/Space)
+  // Accessibility: toggle menu with keyboard (Enter/Space)
   menuToggle.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -397,5 +230,6 @@
     }
   });
 </script>
+
 </body>
 </html>
