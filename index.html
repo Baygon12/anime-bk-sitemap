@@ -58,6 +58,21 @@
       padding: 0 15px;
     }
 
+    .search-box {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .search-box input {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+    }
+
     .anime-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
@@ -99,21 +114,6 @@
       margin-top: 5px;
     }
 
-    .search-box {
-      margin: 15px 0;
-      text-align: center;
-    }
-
-    .search-box input {
-      width: 90%;
-      max-width: 400px;
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 25px;
-      border: none;
-      outline: none;
-    }
-
     footer {
       text-align: center;
       color: #aaa;
@@ -126,6 +126,7 @@
       nav {
         justify-content: center;
       }
+
       .anime-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -151,37 +152,27 @@
   </div>
 
   <div class="anime-grid" id="animeList">
-    <div class="anime-card" data-title="Black Clover">
-      <img src="https://cdn.anime-no1.com/images/black-clover.jpg" alt="Black Clover" />
+
+    <!-- ✅ Black Clover -->
+    <div class="anime-card" data-title="Black Clover แบล็คโคลเวอร์">
+      <img src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1" alt="Black Clover แบล็คโคลเวอร์" />
       <div class="info">
-        <div class="title">Black Clover</div>
-        <div class="ep">ตอนที่ 170 - พากย์ไทย</div>
+        <div class="title">Black Clover แบล็คโคลเวอร์</div>
+        <div class="ep">ตอนที่ 1-170 - พากย์ไทย</div>
       </div>
     </div>
 
-    <div class="anime-card" data-title="Demon Slayer">
-      <img src="https://cdn.anime-no1.com/images/demon-slayer.jpg" alt="Demon Slayer" />
+    <!-- 🔁 เพิ่มการ์ดอื่นๆได้ตรงนี้ -->
+    <!-- ตัวอย่าง: 
+    <div class="anime-card" data-title="ชื่อเรื่อง">
+      <img src="ลิงก์รูปภาพ" alt="ชื่อเรื่อง" />
       <div class="info">
-        <div class="title">Demon Slayer</div>
-        <div class="ep">ตอนที่ 26 - ซับไทย</div>
+        <div class="title">ชื่อเรื่อง</div>
+        <div class="ep">รายละเอียดตอน</div>
       </div>
     </div>
+    -->
 
-    <div class="anime-card" data-title="One Piece">
-      <img src="https://cdn.anime-no1.com/images/one-piece.jpg" alt="One Piece" />
-      <div class="info">
-        <div class="title">One Piece</div>
-        <div class="ep">ตอนที่ 1100 - พากย์ไทย</div>
-      </div>
-    </div>
-
-    <div class="anime-card" data-title="Your Name">
-      <img src="https://cdn.anime-no1.com/images/your-name.jpg" alt="Your Name" />
-      <div class="info">
-        <div class="title">Your Name (Movie)</div>
-        <div class="ep">พากย์ไทย / ซับไทย</div>
-      </div>
-    </div>
   </div>
 </div>
 
