@@ -28,6 +28,11 @@
       font-weight: 700;
       margin-top: 8px;
     }
+    .anime-preview .episodes {
+      margin-top: 4px;
+      color: #ffa07a;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -54,10 +59,14 @@
 
         const img = item.querySelector('img');
         const title = item.querySelector('.title');
+        const episodes = item.querySelector('.episodes');
 
         if(img && title) {
           preview.appendChild(img.cloneNode(true));
           preview.appendChild(title.cloneNode(true));
+          if(episodes) {
+            preview.appendChild(episodes.cloneNode(true));
+          }
           container.appendChild(preview);
         }
       });
@@ -70,5 +79,4 @@
 </script>
 
 </body>
-</html></body>
 </html>
