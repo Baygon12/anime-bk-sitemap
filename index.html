@@ -1,54 +1,198 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>นโยบายความเป็นส่วนตัว | anime-bk.com</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #eee;
-      padding: 20px;
-      line-height: 1.7;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anime BK - เว็บอนิเมะอันดับ 1</title>
+<style>
+  /* ฟ้อนต์ */
+  @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: #121212;
+    color: #eee;
+  }
+
+  header {
+    background-color: #ff3d00;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px #ff3d0033;
+  }
+
+  header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #222;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .search-box {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .search-box input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+  }
+
+  .anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    gap: 20px;
+  }
+
+  .anime-item {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px #ff3d0080;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .anime-item:hover {
+    transform: scale(1.05);
+  }
+
+  .anime-thumb {
+    width: 100%;
+    display: block;
+  }
+
+  .anime-info {
+    padding: 10px;
+  }
+
+  .anime-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+  }
+
+  .anime-ep {
+    font-size: 0.9rem;
+    color: #ff6f3d;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  @media(max-width: 480px) {
+    nav {
+      display: none;
     }
-    h1, h2 {
-      color: #00bcd4;
-    }
-    a {
-      color: #4dd0e1;
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>นโยบายความเป็นส่วนตัว</h1>
-    <p>ยินดีต้อนรับสู่ <strong>anime-bk.com</strong> เว็บไซต์ของเราให้บริการข้อมูลเกี่ยวกับอนิเมะเพื่อความบันเทิงแก่ผู้ใช้ทุกคน เราให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้ และนี่คือนโยบายความเป็นส่วนตัวของเรา</p>
 
-    <h2>1. ข้อมูลที่เราเก็บ</h2>
-    <p>เราอาจเก็บข้อมูลบางประเภทโดยอัตโนมัติ เช่น ที่อยู่ IP, ประเภทเบราว์เซอร์, เวลาการเข้าใช้งาน และหน้าที่ผู้ใช้เข้าชม เพื่อวิเคราะห์พฤติกรรมการใช้งานของเว็บไซต์</p>
+<header>
+  <a href="#" class="logo">Anime BK</a>
+  <nav>
+    <a href="#">หน้าแรก</a>
+    <a href="#">อนิเมะ</a>
+    <a href="#">ซับไทย</a>
+    <a href="#">พากย์ไทย</a>
+    <a href="#">ติดต่อ</a>
+  </nav>
+</header>
 
-    <h2>2. การใช้คุกกี้ (Cookies)</h2>
-    <p>เว็บไซต์ของเราใช้คุกกี้เพื่อปรับปรุงประสบการณ์การใช้งาน ผู้ใช้สามารถเลือกปิดการใช้งานคุกกี้ผ่านเบราว์เซอร์ของตนได้</p>
-
-    <h2>3. การแสดงโฆษณาจากบุคคลที่สาม</h2>
-    <p>เราอาจแสดงโฆษณาจากพันธมิตร เช่น Google AdSense ซึ่งอาจใช้คุกกี้เพื่อแสดงโฆษณาที่ตรงกับความสนใจของคุณ หากคุณต้องการเรียนรู้เพิ่มเติมเกี่ยวกับการจัดการคุกกี้ของ Google คุณสามารถเข้าไปที่ <a href="https://policies.google.com/technologies/ads" target="_blank">นโยบายโฆษณาของ Google</a></p>
-
-    <h2>4. ลิงก์ไปยังเว็บไซต์อื่น</h2>
-    <p>เว็บไซต์ของเราอาจมีลิงก์ไปยังเว็บไซต์ภายนอก เราไม่มีความรับผิดชอบต่อเนื้อหา หรือนโยบายความเป็นส่วนตัวของเว็บไซต์เหล่านั้น</p>
-
-    <h2>5. การปรับปรุงนโยบาย</h2>
-    <p>เราขอสงวนสิทธิ์ในการปรับปรุงนโยบายนี้โดยไม่ต้องแจ้งให้ทราบล่วงหน้า กรุณาตรวจสอบหน้านี้เป็นระยะ</p>
-
-    <h2>6. ติดต่อเรา</h2>
-    <p>หากคุณมีข้อสงสัยหรือข้อเสนอแนะเกี่ยวกับนโยบายความเป็นส่วนตัวนี้ กรุณาติดต่อเราผ่านหน้า <a href="/contact.html">ติดต่อเรา</a></p>
-
-    <p>อัปเดตล่าสุด: 17 เมษายน 2025</p>
+<div class="container">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ค้นหาอนิเมะ..." onkeyup="filterAnime()" />
   </div>
+
+  <div class="anime-list" id="animeList">
+    <div class="anime-item" data-title="Black Clover">
+      <img src="https://cdn.anime-no1.com/images/black-clover.jpg" alt="Black Clover" class="anime-thumb" />
+      <div class="anime-info">
+        <h3 class="anime-title">Black Clover</h3>
+        <div class="anime-ep">ตอนที่ 170</div>
+      </div>
+    </div>
+
+    <div class="anime-item" data-title="Attack on Titan">
+      <img src="https://cdn.anime-no1.com/images/attack-on-titan.jpg" alt="Attack on Titan" class="anime-thumb" />
+      <div class="anime-info">
+        <h3 class="anime-title">Attack on Titan</h3>
+        <div class="anime-ep">ตอนที่ 85</div>
+      </div>
+    </div>
+
+    <div class="anime-item" data-title="Demon Slayer">
+      <img src="https://cdn.anime-no1.com/images/demon-slayer.jpg" alt="Demon Slayer" class="anime-thumb" />
+      <div class="anime-info">
+        <h3 class="anime-title">Demon Slayer</h3>
+        <div class="anime-ep">ตอนที่ 26</div>
+      </div>
+    </div>
+
+    <!-- เพิ่มรายการอนิเมะที่นี่ -->
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Anime BK - เว็บอนิเมะอันดับ 1 ดูฟรี พากย์ไทย ซับไทย
+</footer>
+
+<script>
+  function filterAnime() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const list = document.getElementById('animeList');
+    const items = list.getElementsByClassName('anime-item');
+
+    for (let i = 0; i < items.length; i++) {
+      let title = items[i].getAttribute('data-title').toLowerCase();
+      if (title.indexOf(filter) > -1) {
+        items[i].style.display = "";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
