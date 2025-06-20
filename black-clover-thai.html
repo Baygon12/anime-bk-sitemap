@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Black Clover - รายละเอียดและตอนทั้งหมด</title>
 <link href="https://img2.pic.in.th/pic/039b1c3dd878efaf74.png" rel="icon" type="image/png"/>
 <style>
@@ -17,7 +17,7 @@
 
   header {
     background-color: #ff3d00;
-    padding: 15px 20px;
+    padding: 15px 20px; /* ขนาดเท่า index */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,15 +26,17 @@
   }
 
   .logo {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* ขนาดเท่า index */
     font-weight: bold;
     color: white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   nav {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
@@ -176,7 +178,6 @@
 </style>
 </head>
 <body>
-
 <header>
   <a aria-label="ไปหน้าแรก Anime BK" class="logo" href="index.html">Anime BK</a>
   <div aria-label="Toggle menu" class="menu-toggle" id="menuToggle" role="button" tabindex="0">
@@ -185,10 +186,10 @@
     <span></span>
   </div>
   <nav id="navMenu" role="navigation">
-    <a href="dub.html">พากย์ไทย</a>
-    <a href="sub.html">ซับไทย</a>
-    <a href="movie.html">The Movie</a>
-    <a href="contact.html">ติดต่อ</a>
+    <a href="index.html">หน้าแรก</a>
+    <a href="#">พากย์ไทย</a>
+    <a href="#">ซับไทย</a>
+    <a href="#">ติดต่อ</a>
   </nav>
 </header>
 
@@ -201,11 +202,9 @@
 
   <h2>รายการตอน Black Clover</h2>
   <ul class="episode-list">
-    <!-- ตอนทั้งหมดที่มี ลิงก์ตามที่คุณมีไว้ -->
+    <!-- ตัวอย่างลิงก์ตอน -->
     <li><a href="black-clover-ep-170.html">ตอนที่ 170</a></li>
     <li><a href="black-clover-ep-169.html">ตอนที่ 169</a></li>
-    <li><a href="black-clover-ep-168.html">ตอนที่ 168</a></li>
-    <!-- ... เพิ่มตอนที่เหลือตามเดิม ... -->
     <li><a href="black-clover-ep-1.html">ตอนที่ 1</a></li>
   </ul>
 </div>
@@ -222,7 +221,6 @@
     navMenu.classList.toggle('active');
   });
 
-  // Accessibility: toggle menu with keyboard (Enter/Space)
   menuToggle.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -230,6 +228,5 @@
     }
   });
 </script>
-
 </body>
 </html>
