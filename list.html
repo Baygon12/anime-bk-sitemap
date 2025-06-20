@@ -1,119 +1,191 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Anime BK - Responsive Header Example</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-  
-  body {
-    margin:0; font-family:'Kanit', sans-serif; background:#141414; color:#fff;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Black Clover - รายละเอียดและตอนทั้งหมด</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-  header {
-    background-color: #ff3d00;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 8px;
-  }
-
-  .anime-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #fff;
-    width: 100%;
-  }
-
-  nav {
-    display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-  }
-
-  nav a {
-    padding: 6px 12px;
-    background-color: #fff;
-    color: #ff3d00;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: background 0.3s;
-  }
-
-  nav a:hover {
-    background-color: #ffe0d9;
-  }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
-  .menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 4px 0;
-    border-radius: 2px;
-  }
-
-  /* มือถือ */
-  @media(max-width: 600px) {
-    nav {
-      display: none;
-      flex-direction: column;
-      background-color: #ff3d00;
-      width: 100%;
-      border-radius: 0 0 8px 8px;
-      margin-top: 5px;
-      padding: 10px 0;
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-color: #141414;
+      color: #fff;
     }
 
-    nav.active {
+    header {
+      background-color: #ff3d00;
+      padding: 15px 20px;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      padding: 12px 0;
-      border-radius: 0;
-      text-align: center;
-      font-size: 1.1rem;
-      width: 100%;
+      padding: 6px 12px;
+      background-color: #fff;
+      color: #ff3d00;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ffe0d9;
     }
 
     .menu-toggle {
-      display: flex;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-  }
-</style>
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #ff3d00;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        border-top: 1px solid #fff3;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px;
+        border-radius: 0;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .anime-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff3d00;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .anime-img {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto 30px auto;
+      border-radius: 8px;
+    }
+
+    .anime-desc {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff6f3d;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul.episode-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+      gap: 12px;
+    }
+
+    ul.episode-list li {
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    ul.episode-list li:hover {
+      background-color: #2a2a2a;
+    }
+
+    ul.episode-list a {
+      color: #ffa07a;
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+    }
+
+    ul.episode-list a:hover {
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      color: #aaa;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <a href="index.html" class="logo">Anime BK</a>
-  <div class="anime-title">Black Clover แบล็คโคลเวอร์</div>
 
-  <div class="menu-toggle" id="menuToggle">
+  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <nav id="navMenu">
+  <nav id="navMenu" role="navigation">
+    <a href="index.html">หน้าแรก</a>
     <a href="#">พากย์ไทย</a>
     <a href="#">ซับไทย</a>
     <a href="#">The Movie</a>
@@ -121,12 +193,50 @@
   </nav>
 </header>
 
+<div class="container">
+  <h1 class="anime-title">Black Clover แบล็คโคลเวอร์</h1>
+
+  <img
+    src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1"
+    alt="Black Clover แบล็คโคลเวอร์"
+    class="anime-img"
+  />
+
+  <p class="anime-desc">
+    เรื่องราวของอัสต้าและยูโนเด็กกำพร้าที่ถูกทิ้งไว้ด้วยกันในโบสถ์ เด็กทั้งสองตั้งเป้าหมายเป็นจักรพรรดิผู้วิเศษ แม้พวกเขาจะไม่มีเวทมนตร์ก็ตาม แต่ด้วยความมุ่งมั่นและความพยายามพวกเขาจะฝ่าฟันอุปสรรคเพื่อพิสูจน์ตัวเองในโลกเวทมนตร์ที่โหดร้าย
+  </p>
+
+  <h2>รายการตอน Black Clover</h2>
+  <ul class="episode-list">
+    <li><a href="#">ตอนที่ 170</a></li>
+    <li><a href="#">ตอนที่ 169</a></li>
+    <li><a href="#">ตอนที่ 168</a></li>
+    <li><a href="#">ตอนที่ 167</a></li>
+    <li><a href="#">ตอนที่ 166</a></li>
+    <li><a href="#">ตอนที่ 165</a></li>
+    <li><a href="#">ตอนที่ 164</a></li>
+    <li><a href="#">ตอนที่ 163</a></li>
+  </ul>
+</div>
+
+<footer>
+  &copy; 2025 Anime BK — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว
+</footer>
+
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+  });
+
+  // Accessibility: toggle with keyboard (Enter/Space)
+  menuToggle.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navMenu.classList.toggle('active');
+    }
   });
 </script>
 
