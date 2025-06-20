@@ -147,7 +147,6 @@
 
   const totalAnime = 1000;
   const animeList = [];
-  // ตัวอย่างข้อมูลจริง (ชื่อเรื่อง + รูป + ตอนจริงแบบสุ่ม)
   for(let i = 1; i <= totalAnime; i++) {
     animeList.push({
       title: `Anime เรื่องที่ ${i}`,
@@ -187,7 +186,6 @@
         <div class="anime-info">
           <div class="anime-title">${anime.title}</div>
           <div class="anime-ep">ตอนที่ ${episodeNumber}</div>
-          <!--<div class="anime-real-ep">ตอนจริง: ${anime.epReal}</div>-->
         </div>
       `;
       animeGrid.appendChild(card);
