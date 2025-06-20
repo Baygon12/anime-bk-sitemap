@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Anime BK - หน้าแรก</title>
+<title>Anime BK - Responsive Header Example</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
+  
   body {
     margin:0; font-family:'Kanit', sans-serif; background:#141414; color:#fff;
   }
@@ -15,10 +15,8 @@
     background-color: #ff3d00;
     padding: 15px 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .logo {
@@ -26,6 +24,15 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
+    margin-bottom: 8px;
+  }
+
+  .anime-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+    width: 100%;
   }
 
   nav {
@@ -53,6 +60,7 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-top: 10px;
   }
 
   .menu-toggle span {
@@ -69,12 +77,10 @@
       display: none;
       flex-direction: column;
       background-color: #ff3d00;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
-      z-index: 100;
-      border-top: 1px solid #fff3;
+      width: 100%;
+      border-radius: 0 0 8px 8px;
+      margin-top: 5px;
+      padding: 10px 0;
     }
 
     nav.active {
@@ -82,57 +88,16 @@
     }
 
     nav a {
-      padding: 12px;
+      padding: 12px 0;
       border-radius: 0;
       text-align: center;
       font-size: 1.1rem;
+      width: 100%;
     }
 
     .menu-toggle {
       display: flex;
     }
-  }
-
-  /* ตัวอย่างการ์ดอนิเมะ */
-  .anime-grid {
-    max-width: 1024px;
-    margin: 20px auto;
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
-    gap: 20px;
-  }
-
-  .anime-card {
-    background-color: #1f1f1f;
-    border-radius: 8px;
-    overflow: hidden;
-    color: #fff;
-    transition: transform 0.2s;
-  }
-
-  .anime-card:hover {
-    transform: scale(1.05);
-  }
-
-  .anime-card img {
-    width: 100%;
-    display: block;
-  }
-
-  .anime-info {
-    padding: 10px;
-  }
-
-  .anime-title {
-    font-weight: 700;
-    margin: 0 0 5px;
-    font-size: 1rem;
-  }
-
-  .anime-ep {
-    font-size: 0.9rem;
-    color: #ffa07a;
   }
 </style>
 </head>
@@ -140,14 +105,15 @@
 
 <header>
   <a href="index.html" class="logo">Anime BK</a>
+  <div class="anime-title">Black Clover แบล็คโคลเวอร์</div>
 
-  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
+  <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <nav id="navMenu" role="navigation">
+  <nav id="navMenu">
     <a href="#">พากย์ไทย</a>
     <a href="#">ซับไทย</a>
     <a href="#">The Movie</a>
@@ -155,33 +121,12 @@
   </nav>
 </header>
 
-<main>
-  <div class="anime-grid">
-    <div class="anime-card">
-      <img src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1" alt="Black Clover" />
-      <div class="anime-info">
-        <div class="anime-title">Black Clover แบล็คโคลเวอร์</div>
-        <div class="anime-ep">ตอนที่ 170</div>
-      </div>
-    </div>
-    <!-- เพิ่มการ์ดอนิเมะอื่นๆ ตามต้องการ -->
-  </div>
-</main>
-
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-  });
-
-  // Accessibility: toggle with keyboard (Enter/Space)
-  menuToggle.addEventListener('keydown', (e) => {
-    if(e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      navMenu.classList.toggle('active');
-    }
   });
 </script>
 
