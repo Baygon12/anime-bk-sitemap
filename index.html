@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ค้นหา Anime BK</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anime BK - รายการอนิเมะแบ่งหน้า</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background: #141414;
-      color: #fff;
-    }
+  body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: #141414;
+    color: #fff;
+  }
 
-    header {
-      background-color: #ff3d00;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-    }
+  header {
+    background-color: #ff3d00;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-    }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
 
+  nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    background-color: #fff;
+    color: #ff3d00;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #ffe0d9;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  @media(max-width: 600px) {
     nav {
+      display: none;
+      flex-direction: column;
+      background-color: #ff3d00;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      border-top: 1px solid #fff3;
+    }
+
+    nav.active {
       display: flex;
-      gap: 10px;
-      flex-wrap: nowrap;
     }
 
     nav a {
-      padding: 6px 12px;
-      background-color: #fff;
-      color: #ff3d00;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #ffe0d9;
+      padding: 12px;
+      border-radius: 0;
+      text-align: center;
+      font-size: 1.1rem;
     }
 
     .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+      display: flex;
     }
+  }
 
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+  main {
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 0 15px;
+  }
 
-    @media(max-width: 600px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #ff3d00;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        z-index: 100;
-        border-top: 1px solid #fff3;
-      }
+  h1 {
+    text-align: center;
+    color: #ffa07a;
+    margin-bottom: 20px;
+  }
 
-      nav.active {
-        display: flex;
-      }
+  .anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 
-      nav a {
-        padding: 12px;
-        border-radius: 0;
-        text-align: center;
-        font-size: 1.1rem;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 20px auto 40px;
-      padding: 0 15px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ffa07a;
-      margin-bottom: 20px;
-    }
-
-    #searchInput {
-      width: 100%;
-      padding: 12px 15px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 30px;
-      box-sizing: border-box;
-      background-color: #1f1f1f;
-      color: #fff;
-    }
-
+  @media(min-width: 768px) {
     .anime-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
     }
+  }
 
-    @media(min-width: 768px) {
-      .anime-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+  .anime-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #fff;
+    transition: transform 0.2s;
+  }
 
-    .anime-card {
-      background-color: #1f1f1f;
-      border-radius: 8px;
-      overflow: hidden;
-      color: #fff;
-      transition: transform 0.2s;
-    }
+  .anime-card:hover {
+    transform: scale(1.05);
+  }
 
-    .anime-card:hover {
-      transform: scale(1.05);
-    }
+  .anime-card img {
+    width: 100%;
+    display: block;
+  }
 
-    .anime-card img {
-      width: 100%;
-      display: block;
-    }
+  .anime-info {
+    padding: 10px;
+  }
 
-    .anime-info {
-      padding: 10px;
-    }
+  .anime-title {
+    font-weight: 700;
+    margin: 0 0 5px;
+    font-size: 1rem;
+  }
 
-    .anime-title {
-      font-weight: 700;
-      margin: 0 0 5px;
-      font-size: 1rem;
-    }
+  .anime-ep {
+    font-size: 0.9rem;
+    color: #ffa07a;
+  }
 
-    .anime-ep {
-      font-size: 0.9rem;
-      color: #ffa07a;
-    }
+  /* Pagination */
+  .pagination {
+    text-align: center;
+    margin-top: 30px;
+  }
 
-    #noResults {
-      text-align: center;
-      color: #ff6a3d;
-      font-weight: bold;
-      margin-top: 30px;
-      display: none;
-    }
-  </style>
+  .pagination button {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .pagination button:disabled {
+    background-color: #888;
+    cursor: default;
+  }
+
+  .pagination button:hover:not(:disabled) {
+    background-color: #ff7043;
+  }
+</style>
 </head>
 <body>
 
@@ -192,14 +199,16 @@
 </header>
 
 <main>
-  <h1>ค้นหาอนิเมะ</h1>
-  <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออนิเมะเพื่อค้นหา..." autofocus />
+  <h1>รายการอนิเมะ</h1>
 
   <div class="anime-grid" id="animeGrid">
-    <!-- การ์ดอนิเมะจะแสดงที่นี่ -->
+    <!-- การ์ดอนิเมะจะถูกแทรกที่นี่ -->
   </div>
 
-  <div id="noResults">ไม่พบผลลัพธ์ที่ค้นหา</div>
+  <div class="pagination">
+    <button id="prevBtn" disabled>ก่อนหน้า</button>
+    <button id="nextBtn" disabled>ถัดไป</button>
+  </div>
 </main>
 
 <script>
@@ -213,40 +222,33 @@
     }
   });
 
-  // ตัวอย่างข้อมูลอนิเมะ (เพิ่ม-แก้ไขได้)
-  const animeList = [
-    {
-      title: "Black Clover แบล็คโคลเวอร์",
-      img: "https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1",
-      ep: "ตอนที่ 170"
-    },
-    {
-      title: "Naruto นารูโตะ",
-      img: "https://i.pinimg.com/736x/ee/21/6c/ee216ce35c220f6122e38736bb7bcecc.jpg",
-      ep: "ตอนที่ 220"
-    },
-    {
-      title: "One Piece วันพีซ",
-      img: "https://upload.wikimedia.org/wikipedia/th/4/4b/One_Piece_Logo.svg",
-      ep: "ตอนที่ 1050"
-    }
-    // เพิ่มรายการอื่น ๆ ตามต้องการ
-  ];
+  // สมมติข้อมูลอนิเมะ 1000 เรื่อง (จริง ๆ ควรแยกไฟล์ JSON)
+  // ตัวอย่างนี้จะสร้างข้อมูลจำลองขึ้นมา
+  const totalAnime = 1000;
+  const animeList = [];
+  for (let i = 1; i <= totalAnime; i++) {
+    animeList.push({
+      title: `Anime เรื่องที่ ${i}`,
+      img: `https://via.placeholder.com/300x420?text=Anime+${i}`,
+      ep: `ตอนที่ ${Math.floor(Math.random()*200)+1}`
+    });
+  }
 
   const animeGrid = document.getElementById('animeGrid');
-  const noResults = document.getElementById('noResults');
-  const searchInput = document.getElementById('searchInput');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-  function displayAnime(list) {
+  const itemsPerPage = 20;
+  let currentPage = 1;
+  const totalPages = Math.ceil(animeList.length / itemsPerPage);
+
+  function renderPage(page) {
     animeGrid.innerHTML = '';
-    if (list.length === 0) {
-      noResults.style.display = 'block';
-      return;
-    } else {
-      noResults.style.display = 'none';
-    }
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageItems = animeList.slice(start, end);
 
-    list.forEach(anime => {
+    pageItems.forEach(anime => {
       const card = document.createElement('div');
       card.className = 'anime-card';
       card.innerHTML = `
@@ -258,17 +260,29 @@
       `;
       animeGrid.appendChild(card);
     });
+
+    prevBtn.disabled = (page === 1);
+    nextBtn.disabled = (page === totalPages);
   }
 
-  // แสดงอนิเมะทั้งหมดเริ่มต้น
-  displayAnime(animeList);
-
-  // ฟังค์ชันค้นหาแบบ real-time
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim().toLowerCase();
-    const filtered = animeList.filter(a => a.title.toLowerCase().includes(query));
-    displayAnime(filtered);
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(currentPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // โหลดหน้าแรก
+  renderPage(currentPage);
 </script>
 
 </body>
