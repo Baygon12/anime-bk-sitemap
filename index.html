@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anime BK - หน้าแรก</title>
+  <title>ค้นหา Anime BK</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
@@ -95,17 +95,31 @@
       }
     }
 
-    .main-title {
+    main {
+      max-width: 1200px;
+      margin: 20px auto 40px;
+      padding: 0 15px;
+    }
+
+    h1 {
       text-align: center;
-      font-size: 1.8rem;
       color: #ffa07a;
-      margin: 20px 0 10px;
+      margin-bottom: 20px;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+      background-color: #1f1f1f;
+      color: #fff;
     }
 
     .anime-grid {
-      max-width: 1200px;
-      margin: 0 auto 30px;
-      padding: 0 15px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -148,6 +162,14 @@
       font-size: 0.9rem;
       color: #ffa07a;
     }
+
+    #noResults {
+      text-align: center;
+      color: #ff6a3d;
+      font-weight: bold;
+      margin-top: 30px;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -170,41 +192,82 @@
 </header>
 
 <main>
-  <h1 class="main-title">Anime BK - ดูอนิเมะพากย์ไทย ซับไทย ครบทุกแนว</h1>
+  <h1>ค้นหาอนิเมะ</h1>
+  <input type="text" id="searchInput" placeholder="พิมพ์ชื่ออนิเมะเพื่อค้นหา..." autofocus />
 
-  <div class="anime-grid">
-    <div class="anime-card">
-      <img src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1" alt="Black Clover" />
-      <div class="anime-info">
-        <div class="anime-title">Black Clover แบล็คโคลเวอร์</div>
-        <div class="anime-ep">ตอนที่ 170</div>
-      </div>
-    </div>
-
-    <!-- เพิ่มการ์ดเพิ่มเติมได้ตามต้องการ -->
-    <div class="anime-card">
-      <img src="https://i.pinimg.com/736x/ee/21/6c/ee216ce35c220f6122e38736bb7bcecc.jpg" alt="Naruto" />
-      <div class="anime-info">
-        <div class="anime-title">Naruto นารูโตะ</div>
-        <div class="anime-ep">ตอนที่ 220</div>
-      </div>
-    </div>
+  <div class="anime-grid" id="animeGrid">
+    <!-- การ์ดอนิเมะจะแสดงที่นี่ -->
   </div>
+
+  <div id="noResults">ไม่พบผลลัพธ์ที่ค้นหา</div>
 </main>
 
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
-
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  menuToggle.addEventListener('keydown', (e) => {
+  menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+  menuToggle.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       navMenu.classList.toggle('active');
     }
+  });
+
+  // ตัวอย่างข้อมูลอนิเมะ (เพิ่ม-แก้ไขได้)
+  const animeList = [
+    {
+      title: "Black Clover แบล็คโคลเวอร์",
+      img: "https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&ssl=1",
+      ep: "ตอนที่ 170"
+    },
+    {
+      title: "Naruto นารูโตะ",
+      img: "https://i.pinimg.com/736x/ee/21/6c/ee216ce35c220f6122e38736bb7bcecc.jpg",
+      ep: "ตอนที่ 220"
+    },
+    {
+      title: "One Piece วันพีซ",
+      img: "https://upload.wikimedia.org/wikipedia/th/4/4b/One_Piece_Logo.svg",
+      ep: "ตอนที่ 1050"
+    }
+    // เพิ่มรายการอื่น ๆ ตามต้องการ
+  ];
+
+  const animeGrid = document.getElementById('animeGrid');
+  const noResults = document.getElementById('noResults');
+  const searchInput = document.getElementById('searchInput');
+
+  function displayAnime(list) {
+    animeGrid.innerHTML = '';
+    if (list.length === 0) {
+      noResults.style.display = 'block';
+      return;
+    } else {
+      noResults.style.display = 'none';
+    }
+
+    list.forEach(anime => {
+      const card = document.createElement('div');
+      card.className = 'anime-card';
+      card.innerHTML = `
+        <img src="${anime.img}" alt="${anime.title}" />
+        <div class="anime-info">
+          <div class="anime-title">${anime.title}</div>
+          <div class="anime-ep">${anime.ep}</div>
+        </div>
+      `;
+      animeGrid.appendChild(card);
+    });
+  }
+
+  // แสดงอนิเมะทั้งหมดเริ่มต้น
+  displayAnime(animeList);
+
+  // ฟังค์ชันค้นหาแบบ real-time
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+    const filtered = animeList.filter(a => a.title.toLowerCase().includes(query));
+    displayAnime(filtered);
   });
 </script>
 
