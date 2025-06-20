@@ -96,32 +96,34 @@
       }
     }
 
-    .container {
-      max-width: 1200px;
+    main {
+      max-width: 1024px;
       margin: 20px auto;
       padding: 0 15px;
     }
 
     .anime-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
     .anime-card {
       background-color: #1f1f1f;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
-      transition: transform 0.2s, background 0.2s;
+      text-align: center;
+      transition: transform 0.2s;
     }
 
     .anime-card:hover {
       transform: translateY(-5px);
-      background-color: #2a2a2a;
     }
 
     .anime-card img {
       width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -131,61 +133,41 @@
 
     .anime-title {
       font-size: 1rem;
-      color: #fff;
       font-weight: bold;
+      color: #ffa07a;
       margin-bottom: 5px;
     }
 
     .anime-ep {
       font-size: 0.9rem;
-      color: #ffa07a;
+      color: #ccc;
     }
 
     .pagination {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .pagination button {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 20px;
       background-color: #ff3d00;
       color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-weight: bold;
       transition: background 0.3s;
     }
 
     .pagination button:disabled {
-      background-color: #555;
-      cursor: default;
+      background-color: #999;
+      cursor: not-allowed;
     }
 
     .pagination button:hover:not(:disabled) {
-      background-color: #ff5f1a;
-    }
-
-    .search-box {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .search-box input {
-      padding: 10px 15px;
-      border-radius: 20px;
-      border: none;
-      width: 250px;
-      max-width: 90%;
-      font-size: 1rem;
-    }
-
-    .no-results {
-      text-align: center;
-      color: #aaa;
-      margin-top: 20px;
+      background-color: #e63600;
     }
 
     footer {
@@ -196,16 +178,29 @@
       margin-top: 40px;
     }
 
-    footer a {
-      color: #ffa07a;
-      text-decoration: none;
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
     }
 
-    footer a:hover {
-      color: #fff;
+    .search-box input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: none;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #noResults {
+      text-align: center;
+      color: #aaa;
+      margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -226,22 +221,24 @@
   </nav>
 </header>
 
-<main class="container">
+<main>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="ค้นหาอนิเมะ..." />
+    <input type="text" id="searchInput" placeholder="ค้นหาอนิเมะ...">
   </div>
 
-  <div id="animeGrid" class="anime-grid"></div>
+  <div class="anime-grid" id="animeGrid"></div>
+
+  <div id="noResults" style="display: none;">ไม่พบผลลัพธ์</div>
 
   <div class="pagination">
     <button id="prevBtn">ก่อนหน้า</button>
     <button id="nextBtn">ถัดไป</button>
   </div>
-
-  <div id="noResults" class="no-results" style="display:none;">
-    ไม่พบผลลัพธ์ที่ค้นหา
-  </div>
 </main>
+
+<footer>
+  © 2025 Anime BK — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว
+</footer>
 
 <!-- โหลดข้อมูลจาก anime-data.js -->
 <script src="anime-data.js"></script>
@@ -327,11 +324,6 @@
 
   renderPage(currentPage);
 </script>
-
-<footer>
-  &copy; 2025 Anime BK — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว<br>
-  <a href="#">Privacy Policy</a> | <a href="#">ติดต่อ</a>
-</footer>
 
 </body>
 </html>
