@@ -1,9 +1,9 @@
 const animeList = [
   {
-    title: "One Piece ตอนที่ 1",
-    img: "https://example.com/onepiece.jpg",
+    title: "Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย",
+    img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
     type: "พากย์ไทย",
-    link: "https://example.com/onepiece-ep1"
+    link: "black-clover-thai"
   },
   {
     title: "Attack on Titan Final",
