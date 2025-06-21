@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.textContent = `
     /* คอมพิวเตอร์ / จอใหญ่ */
@@ -84,4 +84,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (h1) {
     h1.parentNode.insertBefore(section, h1);
   }
-}); 
+});*/
