@@ -18,7 +18,7 @@ const animeList = [
     type: "ซับไทย"
   },
   {
-    title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-153 ซับไทย",
+    title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-153 ซับไชคเบึพยััยีขีขียยีกัยปะกนะปะนะนะนะก่รสาสสสสสสสสสสสสสสววสสสวววววววววววววววววทย",
     img: "https://img5.pic.in.th/file/secure-sv1/Fights-Break-Sphere-Season-5-1_11zon.jpg",
     link: "https://example.com/naruto",
     type: "ซับไทย"
