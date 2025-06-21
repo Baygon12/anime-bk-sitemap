@@ -109,7 +109,7 @@
 
     .nav-buttons {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     .nav-buttons a {
@@ -128,18 +128,19 @@
       background-color: #ff7043;
     }
 
-    .video-container {
-      width: 100%;
-      aspect-ratio: 16 / 9;
+    .video-fullscreen {
+      position: relative;
+      width: 100vw;
+      height: 56.25vw; /* อัตราส่วน 16:9 */
+      margin: 0 auto;
       background: #000;
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
-    .video-container iframe,
-    .video-container video {
+    .video-fullscreen iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
@@ -165,44 +166,23 @@
   </div>
   <nav id="navMenu" role="navigation">
     <a href="contact.html">ต่อต่อแจ้งปัญหา</a>
-  
   </nav>
 </header>
 
 <main>
   <div class="video-title">Black Clover แบล็คโคลเวอร์ ตอนที่ 2 พากย์ไทย</div>
 
-
-
   <div class="nav-buttons">
-  <a href="black-clover-ep-1.html">ก่อนหน้า</a>
-  <a href="black-clover-thai.html">ทั้งหมด</a>
-  <a href="black-clover-ep-3.html">ถัดไป</a>
-  </div>
-  <style>
-  .video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 สัดส่วนจอวิดีโอ */
-    height: 0;
-    overflow: hidden;
-  }
-
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-</style>
-
-<div class="video-container">
-  <iframe src="https://gdplayer.vip/Q8DB6A3BL8E4" allow="autoplay" allowfullscreen></iframe>
-</div>
+    <a href="black-clover-ep-1.html">ก่อนหน้า</a>
+    <a href="black-clover-thai.html">ทั้งหมด</a>
+    <a href="black-clover-ep-3.html">ถัดไป</a>
   </div>
 </main>
+
+<!-- วิดีโอแบบเต็มจออยู่ล่างชื่อเรื่อง -->
+<div class="video-fullscreen">
+  <iframe src="https://gdplayer.vip/Q8DB6A3BL8E4" allow="autoplay" allowfullscreen></iframe>
+</div>
 
 <footer>
   © 2025 Anime XD — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว
