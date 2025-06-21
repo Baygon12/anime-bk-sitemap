@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.textContent = `
@@ -85,3 +86,4 @@ document.addEventListener("DOMContentLoaded", function () {
     h1.parentNode.insertBefore(section, h1);
   }
 });
+*/
