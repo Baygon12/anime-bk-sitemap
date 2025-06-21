@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.textContent = `
-    /* เอา padding และ margin รอบนอก container ออก เพื่อชิดขอบ */
+    /* คอมพิวเตอร์ / จอใหญ่ */
     .container {
       max-width: 100%;
       margin: 0 auto;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       align-items: center;
       flex-wrap: wrap;
       background-color: #222;
-      padding: 0;  /* เอา padding ออก */
+      padding: 0;
       margin-bottom: 20px;
       width: 100%;
       box-sizing: border-box;
@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
       vertical-align: middle;
     }
 
+    .banner-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* มือถือ ปรับ 2 คอลัมน์เต็ม ไม่มีช่องขอบ */
     @media (max-width: 768px) {
       .banner-wrapper {
         padding: 0;
@@ -42,21 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       .container {
         padding: 0;
+        max-width: 100%;
       }
       .w-50 {
         width: 49.9%;
         margin: 0;
       }
       .w-50 + .w-50 {
-        margin-left: 0.2%;
+        margin-left: 0.2%; /* ช่องว่างเล็กน้อยระหว่าง 2 คอลัมน์ */
       }
-    }
-
-    /* รูปภาพให้เต็มกล่อง */
-    .banner-wrapper img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
   `;
   document.head.appendChild(style);
