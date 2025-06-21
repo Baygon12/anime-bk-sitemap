@@ -2,45 +2,75 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>ติดต่อเรา | anime-xd.xyz</title>
+  <title>ติดต่อเรา | Anime XD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://img2.pic.in.th/pic/039b1c3dd878efaf74.png" type="image/png" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background: #141414;
+      color: #fff;
       line-height: 1.8;
-      padding: 20px;
+    }
+
+    header {
+      background-color: #ff3d00;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
     }
 
     .container {
       max-width: 800px;
-      margin: auto;
-      background-color: #000000;
+      margin: 40px auto;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
     h1 {
-      color: #2e51a2;
+      font-size: 2rem;
+      color: #ff7043;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
     p {
       font-size: 1.05rem;
-      color: #ffffff;
+      color: #ddd;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
     }
 
     .contact-button {
       display: inline-block;
-      margin-top: 15px;
-      margin-right: 10px;
-      padding: 10px 20px;
+      padding: 12px 24px;
       color: white;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      font-size: 1rem;
     }
 
     .line-button {
@@ -58,23 +88,42 @@
     .facebook-button:hover {
       background-color: #0f5dc6;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <a href="index.html" class="logo">Anime XD</a>
+  </header>
+
   <div class="container">
-    <h1>📬 ติดต่อเรา</h1>
-    <p>หากคุณมีคำถาม ข้อเสนอแนะ หรือต้องการติดต่อทีมงาน <strong>anime-xd.xyz</strong></p>
-    <p>สามารถติดต่อเราผ่านช่องทางด้านล่าง:</p>
+    <h1>📬 ติดต่อทีมงาน Anime XD</h1>
+    <p>หากคุณมีคำถาม แจ้งปัญหา หรือเสนอแนะแนวทางพัฒนาเว็บไซต์</p>
+    <p>สามารถติดต่อเราได้ผ่านช่องทางด้านล่างนี้</p>
 
-    <a class="contact-button line-button" href="https://line.me/ti/p/HhFTcqaFqG" target="_blank" rel="noopener">
-      📱 เพิ่มเพื่อนใน LINE
-    </a>
+    <div class="buttons">
+      <a class="contact-button line-button" href="https://line.me/ti/p/HhFTcqaFqG" target="_blank" rel="noopener">
+        📱 LINE Official
+      </a>
 
-    <a class="contact-button facebook-button" href="https://www.facebook.com/share/16Rmyzz7c6/" target="_blank" rel="noopener">
-      📘 ติดต่อผ่าน Facebook
-    </a>
-
-    <p style="margin-top: 30px;"></p>
+      <a class="contact-button facebook-button" href="https://www.facebook.com/share/16Rmyzz7c6/" target="_blank" rel="noopener">
+        📘 Facebook Page
+      </a>
+    </div>
   </div>
+
+  <footer>
+    © 2025 Anime XD — ดูอนิเมะออนไลน์ พากย์ไทย ซับไทย ครบทุกแนว
+  </footer>
+
 </body>
 </html>
