@@ -12,10 +12,22 @@ const animeList = [
     type: "ซับไทย"
   },
   {
-    title: "Your Name หลับตาฝัน ถึงชื่อเธอ",
-    img: "https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/10/your-name.jpg?w=400&ssl=1",
-    link: "https://example.com/yourname",
-    type: "The Movie"
+    title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-153 ซับไทย",
+    img: "https://img5.pic.in.th/file/secure-sv1/Fights-Break-Sphere-Season-5-1_11zon.jpg",
+    link: "https://example.com/naruto",
+    type: "ซับไทย"
+  },
+  {
+    title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-153 ซับไทย",
+    img: "https://img5.pic.in.th/file/secure-sv1/Fights-Break-Sphere-Season-5-1_11zon.jpg",
+    link: "https://example.com/naruto",
+    type: "ซับไทย"
+  },
+  {
+    title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-153 ซับไทย",
+    img: "https://img5.pic.in.th/file/secure-sv1/Fights-Break-Sphere-Season-5-1_11zon.jpg",
+    link: "https://example.com/naruto",
+    type: "ซับไทย"
   },
   // เพิ่มเรื่องอื่นๆ ต่อจากนี้...
 ];
