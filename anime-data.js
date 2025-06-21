@@ -7,13 +7,13 @@ const animeList = [
   },
   {
     title: "Attack on Titan Final",
-    img: "https://example.com/aot.jpg",
+    img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
     type: "ซับไทย",
     link: "https://example.com/aot-final"
   },
   {
     title: "Jujutsu Kaisen ซีซั่น 2",
-    img: "https://example.com/jujutsu.jpg",
+    img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
     type: "ซับไทย",
     link: "https://example.com/jujutsu-season2"
   },
