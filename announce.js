@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const style = document.createElement("style");
   style.textContent = `
@@ -42,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
       height: auto;
     }
 
-    /* มือถือ ปรับ 2 คอลัมน์เต็ม ไม่มีช่องขอบ */
     @media (max-width: 768px) {
       .banner-wrapper {
         padding: 0;
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         margin: 0;
       }
       .w-50 + .w-50 {
-        margin-left: 0.2%; /* ช่องว่างเล็กน้อยระหว่าง 2 คอลัมน์ */
+        margin-left: 0.2%;
       }
     }
   `;
@@ -81,9 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  const h1 = document.querySelector("main h1");
-  if (h1) {
-    h1.parentNode.insertBefore(section, h1);
-  }
+  // เปลี่ยนจากแทรกหน้า <main><h1> มาแทรกหน้า <body> แทน
+  document.body.insertBefore(section, document.body.firstChild);
 });
-
