@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // สร้างแท็ก <style> สำหรับ CSS
+  // สร้างแท็ก <style> สำหรับ CSS รวมใหม่
   const style = document.createElement("style");
   style.textContent = `
     .banner-wrapper {
@@ -20,10 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     .w-50 {
       width: 49%;
+      box-sizing: border-box;
     }
 
     .w-100 {
       width: 100%;
+      box-sizing: border-box;
     }
 
     .v-middle {
@@ -31,13 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     @media (max-width: 768px) {
+      .banner-wrapper {
+        padding: 0;
+      }
+      .container {
+        padding: 0 5px;
+      }
       .w-50 {
-        width: 100%;
-        margin-bottom: 10px;
+        width: 49.5%;
+        margin: 0;
+      }
+      .w-50 + .w-50 {
+        margin-left: 1%;
       }
     }
   `;
-  document.head.appendChild(style); // ⬅️ แทรก <style> เข้า <head>
+  document.head.appendChild(style); // แทรก <style> เข้า <head>
 
   // สร้าง Section ของแบนเนอร์
   const section = document.createElement("section");
@@ -58,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  // แทรกไว้เหนือ <h1> "รายการอนิเมะ"
+  // แทรก section ไว้เหนือ <h1> ใน <main>
   const h1 = document.querySelector("main h1");
   if (h1) {
     h1.parentNode.insertBefore(section, h1);
