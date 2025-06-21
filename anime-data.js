@@ -7,7 +7,7 @@ const animeList = [
   },
   {
     title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-152 ซับไทย",
-    img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
+    img: "https://img2.pic.in.th/pic/Fights-Break-Sphere-Season-5-1_11zon3cf7c93b89dc03bb.jpg",
     type: "ซับไทย",
     link: "Fights-Break-Sphere-Season-5"
   },
