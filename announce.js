@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // สร้างแท็ก <style> สำหรับ CSS รวมใหม่
   const style = document.createElement("style");
   style.textContent = `
+    /* เอา padding และ margin รอบนอก container ออก เพื่อชิดขอบ */
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
     .banner-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       background-color: #222;
-      padding: 10px;
+      padding: 0;  /* เอา padding ออก */
       margin-bottom: 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .w-50 {
-      width: 49%;
+      width: 49.9%;
       box-sizing: border-box;
+      margin: 0;
     }
 
     .w-100 {
@@ -35,22 +38,29 @@ document.addEventListener("DOMContentLoaded", function () {
     @media (max-width: 768px) {
       .banner-wrapper {
         padding: 0;
+        margin-bottom: 10px;
       }
       .container {
-        padding: 0 5px;
+        padding: 0;
       }
       .w-50 {
-        width: 49.5%;
+        width: 49.9%;
         margin: 0;
       }
       .w-50 + .w-50 {
-        margin-left: 1%;
+        margin-left: 0.2%;
       }
     }
-  `;
-  document.head.appendChild(style); // แทรก <style> เข้า <head>
 
-  // สร้าง Section ของแบนเนอร์
+    /* รูปภาพให้เต็มกล่อง */
+    .banner-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  `;
+  document.head.appendChild(style);
+
   const section = document.createElement("section");
   section.innerHTML = `
     <div class="container">
@@ -69,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  // แทรก section ไว้เหนือ <h1> ใน <main>
   const h1 = document.querySelector("main h1");
   if (h1) {
     h1.parentNode.insertBefore(section, h1);
