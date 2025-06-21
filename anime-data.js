@@ -9,7 +9,7 @@ const animeList = [
     title: "Fights Break Sphere Season 5 สัประยุทธ์ทะลุฟ้า ภาค 5 ตอนที่ 1-152 ซับไทย",
     img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
     type: "ซับไทย",
-    link: "https://example.com/aot-final"
+    link: "Fights-Break-Sphere-Season-5"
   },
   {
     title: "Jujutsu Kaisen ซีซั่น 2",
