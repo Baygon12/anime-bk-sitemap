@@ -84,4 +84,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (h1) {
     h1.parentNode.insertBefore(section, h1);
   }
-}); 
+});
