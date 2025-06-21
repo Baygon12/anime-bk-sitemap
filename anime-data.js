@@ -264,15 +264,6 @@
   let currentPage = 1;
   let filteredList = animeList;
 
-  // ฟังก์ชัน debounce ช่วยหน่วงเวลาไม่ให้ค้นหาทันทีที่พิมพ์
-  function debounce(func, delay) {
-    let timeout;
-    return function(...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
-
   function renderPage(page) {
     animeGrid.innerHTML = '';
     const start = (page - 1) * itemsPerPage;
@@ -290,7 +281,7 @@
       card.className = 'anime-card';
       card.innerHTML = `
         <a href="${anime.link}" target="_blank" rel="noopener noreferrer">
-          <img src="${anime.img}" alt="${anime.title}" loading="lazy" />
+          <img src="${anime.img}" alt="${anime.title}" />
           <div class="anime-info">
             <div class="anime-title">${anime.title}</div>
             <div class="anime-ep">${anime.type}</div>
@@ -320,8 +311,7 @@
     }
   });
 
-  // ใช้ debounce กับ event input
-  const handleSearch = debounce(() => {
+  searchInput.addEventListener('input', () => {
     const query = searchInput.value.trim().toLowerCase();
     currentPage = 1;
     if (query === '') {
@@ -330,9 +320,7 @@
       filteredList = animeList.filter(anime => anime.title.toLowerCase().includes(query));
     }
     renderPage(currentPage);
-  }, 300); // หน่วงเวลา 300ms
-
-  searchInput.addEventListener('input', handleSearch);
+  });
 
   renderPage(currentPage);
 </script>
