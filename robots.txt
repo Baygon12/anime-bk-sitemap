@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://anime-888.com/sitemap.xml
