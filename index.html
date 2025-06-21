@@ -67,16 +67,13 @@
     }
 
     .anime-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 16px;
-      justify-content: center;
       padding: 20px;
     }
 
     .anime-card {
-      width: 160px;
-      height: 280px;
       background-color: #1a1a1a;
       border-radius: 12px;
       overflow: hidden;
