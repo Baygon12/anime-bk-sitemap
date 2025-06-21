@@ -1,55 +1,40 @@
 
 
 <!DOCTYPE html>
-
 <html lang="th">
 <head>
-    <link rel="icon" href="https://img2.pic.in.th/pic/039b1c3dd878efaf74.png" type="image/png" />
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย</title>
-
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย</title>
+  <link rel="icon" href="https://img2.pic.in.th/pic/039b1c3dd878efaf74.png" type="image/png" />
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
     body {
       margin: 0;
       font-family: 'Kanit', sans-serif;
-      background-color: #141414;
+      background: #141414;
       color: #fff;
     }
-
     header {
       background-color: #ff3d00;
       padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       position: relative;
     }
-
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: bold;
       color: white;
       text-decoration: none;
-      display: flex;
-      align-items: center;
     }
-
-    .logo img {
-      height: 24px;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
     nav {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
-
     nav a {
       padding: 6px 12px;
       background-color: transparent;
@@ -61,17 +46,15 @@
       cursor: pointer;
       transition: color 0.3s;
     }
-
     nav a:hover {
       color: #ffccbc;
+      text-decoration: none;
     }
-
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
     }
-
     .menu-toggle span {
       width: 25px;
       height: 3px;
@@ -79,8 +62,7 @@
       margin: 4px 0;
       border-radius: 2px;
     }
-
-    @media (max-width: 600px) {
+    @media(max-width: 600px) {
       nav {
         display: none;
         flex-direction: column;
@@ -92,113 +74,139 @@
         z-index: 100;
         border-top: 1px solid #fff3;
       }
-
       nav.active {
         display: flex;
       }
-
       nav a {
         padding: 12px;
         border-radius: 0;
         text-align: center;
         font-size: 1.1rem;
       }
-
       .menu-toggle {
         display: flex;
       }
     }
-
-    .container {
-      max-width: 1024px;
-      margin: 20px auto;
+    main {
+      max-width: 1200px;
+      margin: 20px auto 40px;
       padding: 0 15px;
     }
-
-    .anime-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ff3d00;
+    h1 {
+      text-align: center;
+      color: #ffa07a;
       margin-bottom: 20px;
-      text-align: center;
     }
-
-    .anime-img {
-      display: block;
-      max-width: 300px;
-      margin: 0 auto 30px auto;
-      border-radius: 8px;
+    .search-container {
+      max-width: 400px;
+      margin: 0 auto 30px;
     }
-
-    .anime-desc {
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ddd;
-      text-align: center;
+    input[type="search"] {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
     }
-
-    h2 {
-      color: #ff6f3d;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    ul.episode-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 700px;
+    .anime-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
-
-    ul.episode-list li {
+    @media(min-width: 768px) {
+      .anime-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .anime-card {
       background-color: #1f1f1f;
       border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      transition: background 0.2s;
+      overflow: hidden;
+      color: #fff;
+      transition: transform 0.2s;
     }
-
-    ul.episode-list li:hover {
-      background-color: #2a2a2a;
+    .anime-card:hover {
+      transform: scale(1.05);
     }
-
-    ul.episode-list a {
-      color: #ffa07a;
-      text-decoration: none;
-      font-weight: 600;
+    .anime-card img {
+      width: 100%;
       display: block;
     }
-
-    ul.episode-list a:hover {
-      color: #fff;
+    .anime-info {
+      padding: 10px;
     }
-
+    .anime-title {
+      font-weight: 700;
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+    .anime-ep {
+      font-size: 0.9rem;
+      color: #ffa07a;
+    }
+    .pagination {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .pagination button {
+      background-color: #ff3d00;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin: 0 5px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .pagination button:disabled {
+      background-color: #888;
+      cursor: default;
+    }
+    .pagination button:hover:not(:disabled) {
+      background-color: #ff7043;
+    }
+    .no-results {
+      text-align: center;
+      color: #f66;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+    .anime-card a {
+      color: inherit;
+      text-decoration: none !important;
+      display: block;
+    }
+    .anime-card a:hover {
+      text-decoration: none !important;
+      color: #ffa07a;
+    }
     footer {
       text-align: center;
-      color: #aaa;
       padding: 20px;
+      background-color: #1f1f1f;
+      color: #ccc;
       font-size: 0.9rem;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
 <header>
-<a aria-label="ไปหน้าแรก Anime BK" class="logo" href="index.html"
-    Anime XD
-    </a>
-<div aria-label="Toggle menu" class="menu-toggle" id="menuToggle" role="button" tabindex="0">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<nav id="navMenu" role="navigation"><a href="index.html">หน้าแรก</a><a href="#">พากย์ไทย</a><a href="#">ซับไทย</a><a href="#">ติดต่อ</a></nav>
+  <a href="index.html" class="logo">Anime XD</a>
+  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav id="navMenu" role="navigation">
+    <a href="#">พากย์ไทย</a>
+    <a href="#">ซับไทย</a>
+    <a href="#">The Movie</a>
+    <a href="#">ติดต่อ</a>
+  </nav>
 </header>
+    
+
 <div class="container">
 <h1 class="anime-title">Black Clover แบล็คโคลเวอร์ ตอนที่ 1-170 พากย์ไทย</h1>
 <img alt="Black Clover แบล็คโคลเวอร์" class="anime-img" src="https://i0.wp.com/anime-no1.com/wp-content/uploads/2023/12/Black-Clover.jpg?w=400&amp;ssl=1"/>
