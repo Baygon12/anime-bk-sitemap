@@ -55,7 +55,7 @@ const animeList = [
     link: "Perfect-World"
   },
   {
-  {
+  
     title: "Perfect World โลกอันสมบูรณ์แบบ ตอนที่ 1-212 พากย์ไทย",
     img: "https://img5.pic.in.th/file/secure-sv1/Perfect-World-1.jpg",
     type: "ตอนที่ 1-212 พากย์ไทย",
