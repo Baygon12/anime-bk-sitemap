@@ -30,8 +30,8 @@ const animeList = [
     link: "Fights-Break-Sphere-Season-2"
   },
   {
-    title: "Fights Break Sphere Season 4 สัประยุทธ์ทะลุฟ้า ภาค 4 ตอนที่ 1-24 ซับไทย",
-    img: "https://img2.pic.in.th/pic/Fights-Break-Sphere-Season-4-1_11zon.jpg",
+    title: "Fights Break Sphere Season 1 สัประยุทธ์ทะลุฟ้า ภาค 1 ตอนที่ 1-12 ซับไทย",
+    img: "https://img2.pic.in.th/pic/Fights-Break-Sphere-e1701447291695-1-1.jpg",
     type: "ตอนที่ 1-12 ซับไทย",
     link: "Fights-Break-Sphere-Season-1"
   },
