@@ -12,10 +12,10 @@ const animeList = [
     link: "Fights-Break-Sphere-Season-5"
   },
   {
-    title: "Jujutsu Kaisen ซีซั่น 2",
-    img: "https://img5.pic.in.th/file/secure-sv1/bf26af8a102711cdc85dc1befc400c4e.jpg",
+    title: "Fights Break Sphere Season 4 สัประยุทธ์ทะลุฟ้า ภาค 4 ตอนที่ 1-24 ซับไทย",
+    img: "https://img2.pic.in.th/pic/Fights-Break-Sphere-Season-4-1_11zon.jpg",
     type: "ซับไทย",
-    link: "https://example.com/jujutsu-season2"
+    link: "Fights-Break-Sphere-Season4"
   },
   // เพิ่มรายการอนิเมะได้เรื่อย ๆ
 ];
