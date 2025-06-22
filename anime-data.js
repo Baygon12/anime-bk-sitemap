@@ -2,7 +2,7 @@ const animeList = [
   {
     title: "One Piece Season 21 – วันพีช ซีซั่น 21 เกาะอนาคตเกาะเอ็กเฮด ตอนที่ 1089-1134 ซับไทย",
     img: "https://img2.pic.in.th/pic/One-Piece-Season-21-4.jpg",
-    type: "ซับไทย",
+    type: "ตอนที่ 1089-1134 ซับไทย",
     link: "One-Piece-Season-21"
   },
   {
@@ -45,7 +45,7 @@ const animeList = [
   {
     title: "One Piece Season 21 – วันพีช ซีซั่น 21 เกาะอนาคตเกาะเอ็กเฮด ตอนที่ 1089-1122 พากย์ไทย",
     img: "https://img2.pic.in.th/pic/One-Piece-Season-21-4.jpg",
-    type: "ซับไทย",
+    type: "ตอนที่ 1089-1122 พากย์ไทย",
     link: "One-Piece-Season-21-thai"
   },
   {
