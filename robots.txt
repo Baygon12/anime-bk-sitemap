@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /search
+Disallow: /?m=1
+
+Allow: /
+
+Sitemap: https://anime-xd.xyz/sitemap_index.xml
