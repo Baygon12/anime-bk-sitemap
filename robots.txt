@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://anime-xd.xyz/sitemap.xml
+Sitemap: https://anime-xd.xyz/sitemap-ep1.xml
+Sitemap: https://anime-xd.xyz/sitemap-ep2.xml
