@@ -70,17 +70,17 @@ const animeList = [
   },
   {
   
-    title: "Douluo Dalu II: Jueshi Tangmen ตำนานจอมยุทธ์ภูตถังซาน 2: สำนักถังเลิศภพจบแดน ตอนที่ 1-104 พากย์ไทย",
+    title: "Douluo Dalu II: Jueshi Tangmen ตำนานจอมยุทธ์ภูตถังซาน 2: สำนักถังเลิศภพจบแดน ตอนที่ 1-106 ซับไทย",
     img: "https://img5.pic.in.th/file/secure-sv1/Soul-Land-2-Peerless-Tang-Sect-768x1077_11zon.webp",
-    type: "ตอนที่ 1-104 พากย์ไทย",
-    link: "Douluo-Dalu-2-thai"
+    type: "ตอนที่ 1-106 ซับไทย",
+    link: "Douluo-Dalu-2"
   },
   {
   
-    title: "Douluo Dalu II: Jueshi Tangmen ตำนานจอมยุทธ์ภูตถังซาน 2: สำนักถังเลิศภพจบแดน ตอนที่ 1-104 พากย์ไทย",
-    img: "https://img5.pic.in.th/file/secure-sv1/Soul-Land-2-Peerless-Tang-Sect-768x1077_11zon.webp",
-    type: "ตอนที่ 1-104 พากย์ไทย",
-    link: "Douluo-Dalu-2-thai"
+    title: "Douluo Dalu (Soul Land) ตำนานจอมยุทธ์ภูตถังซาน ตอนที่ 1-265 พากย์ไทย",
+    img: "https://img5.pic.in.th/file/secure-sv1/images-2-1bc9fc8f7380b3ec3.jpeg",
+    type: "ตอนที่ 1-265 พากย์ไทย",
+    link: "Douluo-Dalu"
   },
   
 
